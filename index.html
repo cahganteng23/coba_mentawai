@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sipora Surfboards - Katiet Mentawai Islands</title>
+    <meta name="description" content="Premium surfboards from Sipora Island, Mentawai - Indonesia's surfing paradise" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </head>
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-color: #0090c1;
+      --secondary-color: #00487c;
+      --accent-color: #38b6ff;
+      --light-blue: #8cdaff;
+      --white: #ffffff;
+      --off-white: #f7f9fa;
+      --sand: #e6d2b5;
+      --dark: #1a2639;
+      --transition: all 0.3s ease;
+      --hover-scale: 1.05;
+      --hover-rotate: 3deg;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      overflow-x: hidden;
+      background-color: var(--off-white);
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    h2 span {
+      color: var(--primary-color);
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--dark);
+      transition: var(--transition);
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    section {
+      padding: 5rem 0;
+      position: relative;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: var(--white);
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      background: var(--secondary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Header Styles */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 5%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: var(--transition);
+      background: rgba(255, 255, 255, 0.9);
+    }
+    
+    header.scrolled {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      padding: 1rem 5%;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo {
+      width: 50px;
+      height: 50px;
+      position: relative;
+      margin-right: 15px;
+    }
+    
+    .surfboard {
+      width: 100%;
+      height: 100%;
+      fill: var(--primary-color);
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    .wave-circle {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30%;
+      background: var(--light-blue);
+      border-radius: 50%;
+      transform: scale(1.5, 0.3);
+      filter: blur(5px);
+      animation: wave-pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes wave-pulse {
+      0%, 100% {
+        opacity: 0.6;
+        transform: scale(1.5, 0.3);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.6, 0.4);
+      }
+    }
+    
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin: 0;
+      line-height: 1;
+    }
+    
+    header h1 span {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: var(--secondary-color);
+      letter-spacing: 2px;
+    }
+    
+    nav ul {
+      display: flex;
+    }
+    
+    nav ul li {
+      margin-left: 2rem;
+    }
+    
+    nav ul li a {
+      color: var(--dark);
+      font-weight: 500;
+      position: relative;
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: var(--transition);
+    }
+    
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .mobile-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: var(--dark);
+      margin: 3px 0;
+      transition: var(--transition);
+    }
+    
+    nav ul li a.hover-effect {
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    nav ul li a.hover-effect:hover {
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+    
+    nav ul li a.hover-effect::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: var(--transition);
+    }
+    
+    nav ul li a.hover-effect:hover::after {
+      width: 100%;
+    }
+    
+    /* Wave Animation */
+    .wave-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100px;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="%238CDAFF"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%238CDAFF"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%238CDAFF"/></svg>');
+      background-size: 1200px 100px;
+      background-repeat: repeat-x;
+      animation: wave 20s linear infinite;
+      opacity: 0.3;
+    }
+    
+    .wave1 {
+      z-index: 4;
+      opacity: 0.3;
+      animation-duration: 30s;
+      bottom: 0;
+    }
+    
+    .wave2 {
+      z-index: 3;
+      opacity: 0.2;
+      animation-duration: 15s;
+      animation-direction: reverse;
+      bottom: 10px;
+    }
+    
+    .wave3 {
+      z-index: 2;
+      opacity: 0.1;
+      animation-duration: 20s;
+      bottom: 20px;
+    }
+    
+    .wave4 {
+      z-index: 1;
+      opacity: 0.05;
+      animation-duration: 25s;
+      animation-direction: reverse;
+      bottom: 30px;
+    }
+    
+    @keyframes wave {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    /* Header Styles continued */
+    .logo:hover .surfboard {
+      animation-play-state: paused;
+      transform: scale(1.1);
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      flex: 1;
+      padding: 2rem;
+      z-index: 2;
+    }
+    
+    .hero h2 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      text-align: left;
+      color: var(--dark);
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+    
+    .hero-image {
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    
+    }
+    
+    .hero-image img {
+      width: 90%;
+      height: 90%;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: -20px 20px 60px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+    
+    /* About Section */
+    .about {
+      background-color: var(--white);
+    }
+    
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+    
+    .about-text {
+      flex: 1;
+    }
+    
+    .about-image {
+      flex: 1;
+    }
+    
+    .about-image img {
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Surfboards Section */
+    .surfboards {
+      background: linear-gradient(to bottom, var(--white), var(--off-white));
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .boards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .board {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+    
+    .board:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+    }
+    
+    .board-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .board-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .board:hover .board-image img {
+      transform: scale(1.1);
+    }
+    
+    .board h3 {
+      padding: 1.5rem 1.5rem 0.5rem;
+      font-size: 1.5rem;
+      color: var(--secondary-color);
+    }
+    
+    .board p {
+      padding: 0 1.5rem;
+      color: var(--dark);
+      opacity: 0.8;
+    }
+    
+    .price {
+      display: block;
+      padding: 0 1.5rem 1.5rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+    
+    /* Gallery Section */
+    .gallery {
+      background-color: var(--off-white);
+      padding: 5rem 0;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+      gap: 20px;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .gallery-item.large {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.12);
+    }
+    
+    /* Contact Section */
+    .contact {
+      background-color: var(--white);
+    }
+    
+    .contact-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .contact-info {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+    
+    .info-item {
+      margin-bottom: 2rem;
+    }
+    
+    .info-item h3 {
+      color: var(--secondary-color);
+      font-size: 1.3rem;
+    }
+    
+    .whatsapp-container {
+      margin: 3rem 0;
+    }
+    
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+      margin: 0 auto;
+    }
+    
+    .whatsapp-btn:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    }
+    
+    .whatsapp-icon {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--off-white);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+    
+    .social-link:hover {
+      transform: translateY(-5px) rotate(var(--hover-rotate));
+      background: var(--primary-color);
+    }
+    
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--dark);
+      transition: var(--transition);
+    }
+    
+    .social-link:hover .social-icon {
+      color: var(--white);
+    }
+    
+    /* Instagram icon special styling */
+    .social-link:hover .instagram {
+      color: #fff;
+    }
+    
+    /* Facebook icon special styling */
+    .social-link:hover .facebook {
+      color: #fff;
+    }
+    
+    /* Twitter icon special styling */
+    .social-link:hover .twitter {
+      color: #fff;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--secondary-color);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .footer-logo .logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    
+    .footer-logo .surfboard {
+      fill: var(--white);
+    }
+    
+    .footer-links ul {
+      display: flex;
+    }
+    
+    .footer-links ul li {
+      margin-left: 1.5rem;
+    }
+    
+    .footer-links ul li a {
+      color: var(--white);
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+    
+    .footer-links ul li a:hover {
+      opacity: 1;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    
+    .footer-links ul li a.hover-effect:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+      color: var(--accent-color);
+    }
+    
+    /* Media Queries */
+    @media (max-width: 992px) {
+      .hero {
+        flex-direction: column;
+      }
+      
+      .hero-content {
+        order: 2;
+        padding: 2rem;
+        text-align: center;
+      }
+      
+      .hero h2 {
+        font-size: 3rem;
+        text-align: center;
+      }
+      
+      .hero p {
+        margin: 0 auto 2rem;
+      }
+      
+      .hero-image {
+        order: 1;
+        width: 100%;
+        height: 50vh;
+      }
+      
+      .about-content {
+        flex-direction: column-reverse;
+        gap: 2rem;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .contact-content {
+        flex-direction: column;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      
+      .footer-links ul {
+        justify-content: center;
+      }
+      
+      .footer-links ul li:first-child {
+        margin-left: 0;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .mobile-toggle {
+        display: flex;
+      }
+      
+      nav ul {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: var(--white);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        clip-path: circle(0% at 90% -10%);
+        transition: all 0.5s ease-out;
+        pointer-events: none;
+      }
+      
+      nav.active ul {
+        clip-path: circle(150% at 90% -10%);
+        pointer-events: all;
+      }
+      
+      nav ul li {
+        margin: 1rem 0;
+        text-align: center;
+      }
+      
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+      
+      .boards-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery-item.large {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+    
+    /* Mobile toggle active state */
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  </style>
+  <body>
+    <div class="wave-container">
+      <div class="wave wave1"></div>
+      <div class="wave wave2"></div>
+      <div class="wave wave3"></div>
+      <div class="wave wave4"></div>
+    </div>
+
+    <header>
+      <div class="logo-container">
+        <div class="logo">
+          <svg viewBox="0 0 100 100" class="surfboard">
+            <path d="M50,10 C30,25 30,75 50,90 C70,75 70,25 50,10 Z" />
+          </svg>
+          <div class="wave-circle"></div>
+        </div>
+        <h1>SIPORA<span>SURFBOARDS</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home" class="hover-effect">Home</a></li>
+          <li><a href="#about" class="hover-effect">About</a></li>
+          <li><a href="#surfboards" class="hover-effect">Surfboards</a></li>
+          <li><a href="#gallery" class="hover-effect">Gallery</a></li>
+          <li><a href="#contact" class="hover-effect">Contact</a></li>
+        </ul>
+        <div class="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h2>Ride the Perfect Wave</h2>
+        <p>Handcrafted surfboards from Katiet, Mentawai Islands</p>
+        <a href="#surfboards" class="btn">Explore Boards</a>
+      </div>
+      <div class="hero-image">
+        <img src="logo.png" alt="Perfect wave at Sipora Island">
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2>Paradise Found: <span>Katiet, Sipora Island</span></h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Located in the heart of surfing paradise, Sipora Island in the Mentawai archipelago is home to some of the world's most perfect waves. Our surfboards are crafted by local shapers who understand the unique conditions of these legendary breaks.</p>
+            <p>Katiet (also known as Lance's Right) is one of the most famous waves in the Mentawais - a picture-perfect right-hand reef break that delivers incredible barrels and wall sections when conditions align.</p>
+            <a href="#contact" class="btn">Visit Us</a>
+          </div>
+          <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb" alt="Sipora Island landscape">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="surfboards" class="surfboards">
+      <div class="container">
+        <h2>Our <span>Surfboards</span></h2>
+        <div class="boards-container">
+          <div class="board">
+            <div class="board-image">
+              <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Shortboard surfboard">
+            </div>
+            <h3>Mentawai Shooter</h3>
+            <p>Performance shortboard designed for fast, hollow waves</p>
+            <span class="price">$695</span>
+          </div>
+          <div class="board">
+            <div class="board-image">
+              <img src="https://images.unsplash.com/photo-1518877593221-1f28583780b4" alt="Fish surfboard">
+            </div>
+            <h3>Island Fish</h3>
+            <p>Versatile fish design for speed and flow in smaller conditions</p>
+            <span class="price">$625</span>
+          </div>
+          <div class="board">
+            <div class="board-image">
+              <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Longboard surfboard">
+            </div>
+            <h3>Katiet Cruiser</h3>
+            <p>Classic longboard shape perfect for gliding and nose riding</p>
+            <span class="price">$795</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <h2>Wave <span>Gallery</span></h2>
+        <div class="gallery-grid">
+          <div class="gallery-item large">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21" alt="Surfing at Katiet">
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb" alt="Mentawai landscape">
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1518877593221-1f28583780b4" alt="Perfect barrel">
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22" alt="Surfboard shaping">
+          </div>
+          <div class="gallery-item large">
+            <img src="https://images.unsplash.com/photo-1518877593221-1f28583780b4" alt="Aerial surfing maneuver">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Get in <span>Touch</span></h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="info-item">
+              <h3>Visit Our Shop</h3>
+              <p>Katiet Beach, Sipora Island<br>Mentawai Islands, Indonesia</p>
+            </div>
+            <div class="info-item">
+              <h3>Contact Us</h3>
+              <p>Email: info@siporasurfboards.com<br>Phone: +62 123 456 7890</p>
+            </div>
+            <div class="whatsapp-container">
+              <button id="whatsapp-btn" class="whatsapp-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="whatsapp-icon"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Chat with Us on WhatsApp
+              </button>
+            </div>
+            <div class="social-links">
+              <a href="#" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="social-icon instagram"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="social-icon facebook"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="#" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="social-icon twitter"><path fill="currentColor" d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div class="logo">
+              <svg viewBox="0 0 100 100" class="surfboard">
+                <path d="M50,10 C30,25 30,75 50,90 C70,75 70,25 50,10 Z" />
+              </svg>
+            </div>
+            <p>SIPORA SURFBOARDS</p>
+          </div>
+          <div class="footer-links">
+            <ul>
+              <li><a href="#home" class="hover-effect">Home</a></li>
+              <li><a href="#about" class="hover-effect">About</a></li>
+              <li><a href="#surfboards" class="hover-effect">Surfboards</a></li>
+              <li><a href="#gallery" class="hover-effect">Gallery</a></li>
+              <li><a href="#contact" class="hover-effect">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 Sipora Surfboards. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu functionality
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const nav = document.querySelector('nav');
+
+  if (mobileToggle && nav) {
+    mobileToggle.addEventListener('click', function() {
+      nav.classList.toggle('active');
+      this.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    const menuLinks = document.querySelectorAll('nav ul li a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        nav.classList.remove('active');
+        mobileToggle.classList.remove('active');
+      });
+    });
+  }
+
+  // Header scroll effect
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // WhatsApp Button Functionality
+  const whatsappBtn = document.getElementById('whatsapp-btn');
+  if (whatsappBtn) {
+    whatsappBtn.addEventListener('click', function() {
+      // REPLACE THIS WITH YOUR WHATSAPP NUMBER (format: country code without + followed by number)
+      const phoneNumber = '6288991079422'; 
+      const message = encodeURIComponent("Hi! I'm interested in Sipora Surfboards.");
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    });
+  }
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        // Get the height of the fixed header
+        const headerHeight = document.querySelector('header').offsetHeight;
+        
+        // Calculate the scroll position
+        const scrollPosition = targetElement.offsetTop - headerHeight;
+        
+        // Scroll smoothly to the target
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+});
+    </script>
+  </body>
+</html>
